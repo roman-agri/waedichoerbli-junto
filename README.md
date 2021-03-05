@@ -1,1 +1,3 @@
 # waedichoerbli-junto
+
+Juntagrico Template
