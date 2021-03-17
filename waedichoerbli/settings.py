@@ -35,14 +35,14 @@ INSTALLED_APPS = [
 
 ROOT_URLCONF = 'waedichoerbli.urls'
 
-DATABASES = {
+DATABASES = {   
     'default': {
-        'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_ENGINE','django.db.backends.sqlite3'), 
-        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','waedichoerbli.db'), 
-        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER'), #''junatagrico', # The following settings are not used with sqlite3:
-        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD'), #''junatagrico',
-        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST'), #'localhost', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT', False), #''', # Set to empty string for default.
+        'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_ENGINE','django.db.backends.postgresql'), 
+        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','waedichoerbli'), 
+        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER', 'lucash'),
+        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD', '1&_fa2rh(J!gK=yX}2+S['),
+        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST', '51.159.75.167'),
+        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT', '28087'),
     }
 }
 
@@ -149,19 +149,19 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
      juntagrico Settings
 """
 ORGANISATION_NAME = "Wädichörbli"
-ORGANISATION_LONG_NAME = "Wädichörbli"
-ORGANISATION_ADDRESS = {"name":"Wädichörbli", 
-            "street" : "55",
-            "number" : "55",
-            "zip" : "8000",
-            "city" : "Wädenswil",
-            "extra" : ""}
-ORGANISATION_BANK_CONNECTION = {"PC" : "5555",
-            "IBAN" : "5555",
-            "BIC" : "5555",
-            "NAME" : "555",
-            "ESR" : ""}
-SHARE_PRICE = "444"
+ORGANISATION_LONG_NAME = "Genossenschaft Wädichörbli"
+ORGANISATION_ADDRESS = {"name":"Genossenschaft Wädichörbli", 
+            "street" : "Froh Ussicht",
+            "number" : "",
+            "zip" : "8833",
+            "city" : "Samstagern",
+            "extra" : "Tel. 077 485 67 78"}
+ORGANISATION_BANK_CONNECTION = {"PC" : "46-110-7",
+            "IBAN" : "CH41 0839 0031 8837 1000 9",
+            "BIC" : "ABSOCH22",
+            "NAME" : "Alternative Bank Schweiz AG",
+            "ESR" : "01-9252-0"}
+SHARE_PRICE = "300"
 
 INFO_EMAIL = "info@waedichoerbli.ch"
 SERVER_URL = "www.waedichoerbli.org"
