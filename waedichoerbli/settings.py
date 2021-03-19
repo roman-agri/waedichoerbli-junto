@@ -40,7 +40,7 @@ DATABASES = {
         'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_ENGINE','django.db.backends.postgresql'), 
         'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','waedichoerbli'), 
         'USER': os.environ.get('JUNTAGRICO_DATABASE_USER', 'lucash'),
-        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD', 'xxxxxxx),
+        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD', 'xxxxxxx'),
         'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST', 'xx.xx.xx.xx'),
         'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT', '28087'),
     }
