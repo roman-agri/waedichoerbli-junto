@@ -164,7 +164,7 @@ ORGANISATION_BANK_CONNECTION = {"PC" : "46-110-7",
 SHARE_PRICE = "300"
 
 INFO_EMAIL = "info@waedichoerbli.ch"
-SERVER_URL = "www.waedichoerbli.org"
+SERVER_URL = "junto.waedichoerbli.ch"
 ADMINPORTAL_NAME = "Wädichörbli"
 ADMINPORTAL_SERVER_URL = "junto.waedichoerbli.ch"
 STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
