@@ -164,6 +164,25 @@ ORGANISATION_BANK_CONNECTION = {"PC" : "46-110-7",
             "ESR" : "01-9252-0"}
 SHARE_PRICE = "300"
 
+VOCABULARY = {
+    'member': 'Mitglied',
+    'member_pl' : 'Mitglieder',
+    'assignment' : 'Arbeitseinsatz',
+    'assignment_pl' : 'Arbeitseinsätze',
+    'share' : 'Anteilschein',
+    'share_pl' : 'Anteilscheine',
+    'subscription' : 'Ernteanteil',
+    'subscription_pl' : 'Ernteanteile',
+    'co_member' : 'Mitabonnent',
+    'co_member_pl' : 'Mitabonnenten',
+    'price' : 'Betriebsbeitrag',
+    'member_type' : 'Mitglied',
+    'member_type_pl' : 'Mitglieder',
+    'depot' : 'Depot',
+    'depot_pl' : 'Depots',
+    'package': 'Tasche',
+}
+
 INFO_EMAIL = "info@waedichoerbli.ch"
 SERVER_URL = "junto.waedichoerbli.ch"
 ADMINPORTAL_NAME = "Wädichörbli"
