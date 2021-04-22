@@ -169,4 +169,4 @@ SERVER_URL = "junto.waedichoerbli.ch"
 ADMINPORTAL_NAME = "Wädichörbli"
 ADMINPORTAL_SERVER_URL = "junto.waedichoerbli.ch"
 STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
-
+ASSIGNMENT_UNIT = "HOURS"
