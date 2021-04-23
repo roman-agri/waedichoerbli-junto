@@ -169,4 +169,14 @@ SERVER_URL = "junto.waedichoerbli.ch"
 ADMINPORTAL_NAME = "Wädichörbli"
 ADMINPORTAL_SERVER_URL = "junto.waedichoerbli.ch"
 STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
+
 ASSIGNMENT_UNIT = "HOURS"
+
+BUSINESS_YEAR_START = {"day":1, "month":6}
+BUSINESS_YEAR_CANCELATION_MONTH = 2
+MEMBERSHIP_END_MONTH = 5
+
+VOCABULARY = {'package': 'Kiste'}
+
+BUSINESS_REGULATIONS = "https://waedichoerbli.ch/wp-content/uploads/2020/06/3_Betriebsreglement-W%C3%A4dich%C3%B6rbli-2020.pdf"
+BYLAWS = "https://waedichoerbli.ch/wp-content/uploads/2020/06/4_Statuten-W%C3%A4dich%C3%B6rbli-2019.pdf"
