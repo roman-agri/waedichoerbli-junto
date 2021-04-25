@@ -178,5 +178,5 @@ MEMBERSHIP_END_MONTH = 5
 
 VOCABULARY = {'package': 'Kiste'}
 
-BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerrbli.pdf"
+BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
