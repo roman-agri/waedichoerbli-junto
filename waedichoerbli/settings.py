@@ -178,5 +178,5 @@ MEMBERSHIP_END_MONTH = 5
 
 VOCABULARY = {'package': 'Kiste'}
 
-BUSINESS_REGULATIONS = "https://waedichoerbli.ch/wp-content/uploads/2020/06/3_Betriebsreglement-W%C3%A4dich%C3%B6rbli-2020.pdf"
-BYLAWS = "https://waedichoerbli.ch/wp-content/uploads/2020/06/4_Statuten-W%C3%A4dich%C3%B6rbli-2019.pdf"
+BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerrbli.pdf"
+BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
