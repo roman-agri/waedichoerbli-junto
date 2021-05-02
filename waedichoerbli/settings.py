@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'impersonate',
     'crispy_forms',
     'waedichoerbli',
+    'juntagrico_assignment_request',
 ]
 
 ROOT_URLCONF = 'waedichoerbli.urls'
