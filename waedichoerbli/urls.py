@@ -22,3 +22,4 @@ urlpatterns = [
     url(r'^$', juntagrico.views.home),
     url(r'^impersonate/', include('impersonate.urls')),
 ]
+path(r'', include('juntagrico_assignment_request.urls')),
