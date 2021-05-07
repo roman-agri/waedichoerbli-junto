@@ -22,7 +22,7 @@ urlpatterns = [
     path(r'', juntagrico.views.home),
     path(r'impersonate/', include('impersonate.urls')),
     path(r'', include('juntagrico_assignment_request.urls')),
-    path(r'', include('juntagrico_assignment_request.urls')),
+    path(r'', include('https://waedichoerbli.ch/admidio/adm_program/modules/downloads/downloads.php')),
 ]
 
 
