@@ -17,11 +17,11 @@ from django.contrib import admin
 import juntagrico
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('juntagrico.urls')),
-    url(r'^$', juntagrico.views.home),
-    url(r'^impersonate/', include('impersonate.urls')),
-    url(r'', include('juntagrico_assignment_request.urls')),
+    path(r'^admin/', admin.site.urls),
+    path(r'^', include('juntagrico.urls')),
+    path(r'^$', juntagrico.views.home),
+    path(r'^impersonate/', include('impersonate.urls')),
+    path(r'', include('juntagrico_assignment_request.urls')),
 ]
 
 
