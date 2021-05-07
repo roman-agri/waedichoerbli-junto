@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'waedichoerbli',
     'juntagrico_assignment_request',
-    'juntagrico_billing',
 ]
 
 ROOT_URLCONF = 'waedichoerbli.urls'
