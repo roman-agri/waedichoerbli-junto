@@ -7,10 +7,3 @@
     height: 161px;
 }
 
-/* make link to jobs big and red */
-#home .content-container a[href="/my/jobs"],
-#juntagrico-views-home .content-container a[href="/my/jobs"]{
-    font-size: 20pt;
-    font-weight: bold;
-    color: #F4441C;
-}
