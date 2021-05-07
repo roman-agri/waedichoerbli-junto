@@ -22,6 +22,7 @@ urlpatterns = [
     path(r'', juntagrico.views.home),
     path(r'impersonate/', include('impersonate.urls')),
     path(r'', include('juntagrico_assignment_request.urls')),
+    path(r'', include('juntagrico_billing.urls')),
 ]
 
 
