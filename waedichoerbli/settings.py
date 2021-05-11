@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'impersonate',
     'crispy_forms',
     'waedichoerbli',
+    'adminsortable2',
     'juntagrico_assignment_request',
 ]
 
