@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'impersonate',
     'crispy_forms',
     'waedichoerbli',
-    'adminsortable2',
 ]
 
 ROOT_URLCONF = 'waedichoerbli.urls'
