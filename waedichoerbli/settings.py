@@ -16,6 +16,8 @@ DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'False')=='True'
 
 ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science', 'localhost',]
 
+# This is used by Django, for example if you reset the password
+DEFAULT_FROM_EMAIL = 'info@waedichoerbli.ch'
 
 # Application definition
 
