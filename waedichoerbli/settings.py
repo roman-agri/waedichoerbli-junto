@@ -149,7 +149,7 @@ MEDIA_ROOT = 'media'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 """
-     juntagrico Settings
+     Juntagrico Settings
 """
 ORGANISATION_NAME = "Wädichörbli"
 ORGANISATION_LONG_NAME = "Genossenschaft Wädichörbli"
@@ -159,28 +159,86 @@ ORGANISATION_ADDRESS = {"name":"Genossenschaft Wädichörbli",
             "zip" : "8833",
             "city" : "Samstagern",
             "extra" : "Tel. 077 485 67 78"}
+
+"""
+ Accounting
+"""            
 ORGANISATION_BANK_CONNECTION = {"PC" : "46-110-7",
             "IBAN" : "CH41 0839 0031 8837 1000 9",
             "BIC" : "ABSOCH22",
             "NAME" : "Alternative Bank Schweiz AG",
             "ESR" : "01-9252-0"}
+CURRENCY= "CHF"   
 SHARE_PRICE = "300"
 
+BUSINESS_YEAR_START = {"day":1, "month":6}
+BUSINESS_YEAR_CANCELATION_MONTH = 2
+MEMBERSHIP_END_MONTH = 5
+
+"""
+  Outgoing-Mail Settings
+"""  
 INFO_EMAIL = "info@waedichoerbli.ch"
 SERVER_URL = "junto.waedichoerbli.ch"
 ADMINPORTAL_NAME = "Wädichörbli"
 ADMINPORTAL_SERVER_URL = "junto.waedichoerbli.ch"
 STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
 
+MAIL_TEMPLATE = "mails/email.html"
+EMAILS = {
+    'password': 'waedichoerbli_emails/member/password_reset_mail.txt',
+}
+
+"""
+    Jobs
+""" 
 ASSIGNMENT_UNIT = "HOURS"
 
-BUSINESS_YEAR_START = {"day":1, "month":6}
-BUSINESS_YEAR_CANCELATION_MONTH = 2
-MEMBERSHIP_END_MONTH = 5
+"""
+    Depots
+"""
+DEPOT_LIST_GENERATION_DAYS = [0]
 
+"""
+   Appereance
+"""
 VOCABULARY = {'package': 'Kiste'}
 
+"""
+   External Documents
+"""
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
 
-DEPOT_LIST_GENERATION_DAYS = [0]
+""" 
+  Logging
+"""  
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'waedichoerbli-django.log',
+            'maxBytes': 1024*1024*1, # 1 MB
+            'backupCount': 5,
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'propagate': True,
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO')
+        },
+        'juntagrico.mailer': {
+            'handlers': ['file', 'console'],
+            'propagate': True,
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO')
+        },
+    },
+}
+
