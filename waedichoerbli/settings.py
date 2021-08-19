@@ -182,6 +182,7 @@ INFO_EMAIL = "info@waedichoerbli.ch"
 SERVER_URL = "junto.waedichoerbli.ch"
 ADMINPORTAL_NAME = "Wädichörbli"
 ADMINPORTAL_SERVER_URL = "junto.waedichoerbli.ch"
+DEFAULT_FROM_EMAIL = "info@waedichoerbli.ch"
 STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
 
 MAIL_TEMPLATE = "mails/email.html"
