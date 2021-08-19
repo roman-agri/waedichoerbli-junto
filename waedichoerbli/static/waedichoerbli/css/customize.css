@@ -1,3 +1,4 @@
+/* apply waedichoerbli logo */
 .juntagrico-logo {
     /* uncomment the next line and add your logo in the img folder */
     background: url(/static/waedichoerbli/img/logo.png) no-repeat 0 0; */
@@ -7,3 +8,7 @@
     height: 161px;
 }
 
+/* bigger text size in tables */
+#filter table {
+    font-size: 0.8rem;
+}
