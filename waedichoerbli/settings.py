@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'waedichoerbli',
     'adminsortable2',
+#    'juntagrico_assignment_request',
 ]
 
 ROOT_URLCONF = 'waedichoerbli.urls'
@@ -188,6 +189,7 @@ STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
 MAIL_TEMPLATE = "mails/email.html"
 EMAILS = {
     'password': 'waedichoerbli_emails/member/password_reset_mail.txt',
+    's_created': 'waedichoerbli_emails/member/share_created.txt',
 }
 
 """
