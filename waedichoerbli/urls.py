@@ -12,13 +12,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.urls import path, include
 from django.contrib import admin
 import juntagrico
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('juntagrico.urls')),
-    url(r'^$', juntagrico.views.home),
-    url(r'^impersonate/', include('impersonate.urls')),
+    path(r'admin/', admin.site.urls),
+    path(r'', include('juntagrico.urls')),
+    path(r'', juntagrico.views.home),
+    path(r'impersonate/', include('impersonate.urls')),
+#   path(r'', include('juntagrico_assignment_request.urls')),
 ]
+
+
