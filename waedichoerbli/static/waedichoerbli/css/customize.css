@@ -12,3 +12,8 @@
 #filter table {
     font-size: 1rem;
 }
+
+/* bigger text size for buttons */
+#send-email {
+    font-size: 1.1rem;
+}
