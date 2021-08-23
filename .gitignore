@@ -7,3 +7,12 @@ static/*
 ssl/*
 /.project
 *.db
+utils.py
+urls.py
+start.py
+wsgi.py
+getCleanTestEnv.sh
+settings.py
+Dockerfile
+docker-compose.yml
+*.log
