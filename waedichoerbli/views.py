@@ -36,7 +36,6 @@ def download_area(request, success=False):
 def list_mgmt(request, success=False):
     return render(request, 'list_mgmt.html', {'success': success})
 
-
 @staff_member_required
 def list_generate(request, future=False):
     def delivery_dates(depot):
