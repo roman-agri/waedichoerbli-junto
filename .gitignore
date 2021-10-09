@@ -15,3 +15,6 @@ start.py
 urls.py
 utils.py
 wsgi.py
+juntagricoapp.py
+views.py
+media/*.pdf
