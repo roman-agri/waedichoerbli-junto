@@ -212,35 +212,4 @@ VOCABULARY = {'package': 'Kiste'}
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
 
-""" 
-  Logging
-"""  
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'waedichoerbli-django.log',
-            'maxBytes': 1024*1024*1, # 1 MB
-            'backupCount': 5,
-        },
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file', 'console'],
-            'propagate': True,
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO')
-        },
-        'juntagrico.mailer': {
-            'handlers': ['file', 'console'],
-            'propagate': True,
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO')
-        },
-    },
-}
 
