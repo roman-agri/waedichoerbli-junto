@@ -14,14 +14,26 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.contrib import admin
+
 import juntagrico
+
+from waedichoerbli import views as waedichoerbli
 
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'', include('juntagrico.urls')),
     path(r'', juntagrico.views.home),
     path(r'impersonate/', include('impersonate.urls')),
-#   path(r'', include('juntagrico_assignment_request.urls')),
-]
+    
+    # download area
+    path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
+
+    # depot list management
+    path('my/pdf/manage', waedichoerbli.list_mgmt, name='lists-mgmt'),
+    path('my/pdf/manage/success', waedichoerbli.list_mgmt, {'success': True}, name='lists-mgmt-success'),
+    path('my/pdf/manage/generate', waedichoerbli.list_generate, name='lists-generate'),
+    path('my/pdf/manage/generate/future', waedichoerbli.list_generate, {'future': True}, name='lists-generate-future'),
+    
+]    
 
 

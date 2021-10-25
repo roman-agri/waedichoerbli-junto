@@ -7,3 +7,14 @@ static/*
 ssl/*
 /.project
 *.db
+docker-compose.yml
+Dockerfile
+getCleanTestEnv.sh
+settings.py
+start.py
+urls.py
+utils.py
+wsgi.py
+juntagricoapp.py
+views.py
+media/*.pdf
