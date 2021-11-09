@@ -199,7 +199,7 @@ ASSIGNMENT_UNIT = "HOURS"
 """
     Depots
 """
-DEPOT_LIST_GENERATION_DAYS = [0]
+DEPOT_LIST_GENERATION_DAYS = [6]
 
 """
    Appereance
