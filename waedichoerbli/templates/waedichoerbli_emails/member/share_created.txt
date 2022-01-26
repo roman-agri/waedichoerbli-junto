@@ -12,7 +12,7 @@
 {% vocabulary "share_pl" as v_share_pl %}
 {% trans "Hallo" %}
 
-{% blocktrans %}{% endblocktrans %}
+{% blocktrans %}Wichtige Information zu Beginn: Die Mails landen manchmal im Spam. Du kannst dem aber vorbeugen, in dem du folgende Mailadressen als Kontakt deiner Kontaktliste im Mailpostfach hinzufügst: sebastian@waedichoerbli.ch ,  info@waedichoerbli.ch  ,  erdmut@waedichierbli.ch {% endblocktrans %}
 
 {% blocktrans with sc=shares|length%}Du hast bei {{ v_d_enriched_organisation }} {{sc}} {{ v_share_pl }} bestellt{% endblocktrans %}:
 {% for share in shares %}{% blocktrans with sid=share.id %}{{ v_share }} mit Systemnummer {{ sid }}{% endblocktrans %}
