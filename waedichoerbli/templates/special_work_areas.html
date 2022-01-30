@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load juntagrico.config %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="/static/juntagrico/external/datatables.min.css"/>
+{% endblock %}
+{% block page_title %}
+    <h3>
+        Spezielle Arbeitsgruppen im Wädichörbli
+    </h3>
+    Die Arbeit in diesen Gruppen benötigt eine Einarbeitung oder spezielles Knowhow. 
+    </br>Daher ist eine 'Bewerbung' zwingend notwendig. So können wir gemeinsam schauen, wie es passt.
+{% endblock %}
+{% block content %}
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <h4>
+                {% trans "Zu den einzelnen Tätigkeitsbereichen" %}
+            </h4>
+        </div>
+    </div>
+   {% for area in areas %}
+        <div class="row mb-1">
+            <div class="col-md-12">
+                {% if request.user.member in area.members.all %}
+                    <a href="{% url 'area' area.id %}"> 
+                        {{ area.name }}
+                    </a>
+                    </br>
+                    KoordinatorIn: {{area.coordinator}} - 
+                    {% if area.email is not None %}
+                        <a href="mailto:{{ area.email }}">
+                            {{ area.email }}
+                        </a>
+                    {% else %}
+                        <a href="mailto:{{ area.coordinator.email }}">
+                            {{ area.coordinator.email }}
+                        </a>
+                    {% endif %}
+                    </p>
+                {% else %}
+                    {{ area.name }}
+                    </br>
+                    KoordinatorIn: {{area.coordinator}} - 
+                    {% if area.email is not None %}
+                        <a href="mailto:{{ area.email }}">
+                            {{ area.email }}
+                        </a>
+                    {% else %}
+                        <a href="mailto:{{ area.coordinator.email }}">
+                            {{ area.coordinator.email }}
+                        </a>
+                    {% endif %}
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    <br /><br />
+
+    <p>Du interessierst dich in einem der obigen Arbeitsbereichen zu unterstützen?</br>
+    Dann melde dich gerne direkt bei der zuständigen Person.</p>
+   
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="/static/juntagrico/external/datatables.min.js">
+    </script>
+{% endblock %}

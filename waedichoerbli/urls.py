@@ -26,6 +26,9 @@ urlpatterns = [
     path(r'impersonate/', include('impersonate.urls')),
     path(r'', include('juntagrico_assignment_request.urls')),
     
+    # special work areas
+    path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),
+
     # download area
     path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
 

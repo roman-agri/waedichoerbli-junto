@@ -1,10 +1,12 @@
-{% if perms.juntagrico.can_view_lists %}
-  <li class="nav-item">
-      <a class="nav-link" href="{% url 'lists-mgmt' %}">Depotlistenerzeugung</a>
-  </li>
-{% endif %}
- <!-- <li class="nav-item">
-      <a class="nav-link" href="https://docs.google.com/spreadsheets/d/1nO6F3FGtbr26O_ydutdB2AcWamZ7jguHHoKYa3ZXWsc/edit?usp=sharing">Ausfahrkalender 2020/2021</a>
-  </li>-->
+  {% if perms.juntagrico.can_view_lists %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'lists-mgmt' %}">Depotlistenerzeugung</a>
+    </li>
+  {% endif %}
+  {% if request.user.member == 'Erdmut Dienemann' or request.user.member == 'Patricia Portmann' %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'special-work-areas' %}">Spezial Einsätze - Test </a>
+     </li>
+  {% endif %}   
 </ul>
 <ul class="admin-menu nav flex-column">
