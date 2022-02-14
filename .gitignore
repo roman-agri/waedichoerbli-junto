@@ -17,4 +17,6 @@ utils.py
 wsgi.py
 juntagricoapp.py
 views.py
+mailer.py
 media/*.pdf
+*.log
