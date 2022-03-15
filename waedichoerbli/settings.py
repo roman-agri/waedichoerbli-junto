@@ -137,6 +137,7 @@ if DEBUG is True:
 """
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
@@ -219,3 +220,21 @@ BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Wae
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/home/app/web/juntagrico_app.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
