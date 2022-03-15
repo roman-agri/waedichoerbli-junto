@@ -12,19 +12,20 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.urls import path, include
+from django.conf.urls import include
 from django.contrib import admin
+from django.urls import re_path, path
 
 import juntagrico
 
 from waedichoerbli import views as waedichoerbli
 
 urlpatterns = [
-    path(r'admin/', admin.site.urls),
-    path(r'', include('juntagrico.urls')),
-    path(r'', juntagrico.views.home),
-    path(r'impersonate/', include('impersonate.urls')),
-    path(r'', include('juntagrico_assignment_request.urls')),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^impersonate/', include('impersonate.urls')),
+    re_path(r'^', include('juntagrico.urls')),
+    re_path(r'^$', juntagrico.views.home),
+    re_path(r'^', include('juntagrico_assignment_request.urls')),
     
     # special work areas
     path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),

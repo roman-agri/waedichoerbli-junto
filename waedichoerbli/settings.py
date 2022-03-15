@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'waedichoerbli',
     'adminsortable2',
     'juntagrico_assignment_request',
+    'polymorphic',
 
 ]
 
@@ -102,7 +103,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'impersonate.middleware.ImpersonateMiddleware'
+    'impersonate.middleware.ImpersonateMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware'
 ]
 
 
@@ -130,16 +132,20 @@ if DEBUG is True:
         if key.startswith("JUNTAGRICO_EMAIL_WHITELISTED"):
             whitelist_email_from_env(key)
             
-
-
+"""
+    base url and css settings
+"""
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
 }
 
 LOGIN_REDIRECT_URL = "/my/home"
+
+STYLES = {'static': ['static/waedichoerbli/css/customize.css']}
 
 """
     File & Storage Settings
@@ -185,11 +191,7 @@ MEMBERSHIP_END_MONTH = 5
 """  
 INFO_EMAIL = "info@waedichoerbli.ch"
 SERVER_URL = "junto.waedichoerbli.ch"
-ADMINPORTAL_NAME = "Wädichörbli"
-ADMINPORTAL_SERVER_URL = "junto.waedichoerbli.ch"
 DEFAULT_FROM_EMAIL = "info@waedichoerbli.ch"
-STYLE_SHEET = "/static/waedichoerbli/css/customize.css"
-
 MAIL_TEMPLATE = "mails/email.html"
 EMAILS = {
     'password': 'waedichoerbli_emails/member/password_reset_mail.txt',
