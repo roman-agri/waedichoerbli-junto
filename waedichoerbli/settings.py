@@ -137,7 +137,7 @@ if DEBUG is True:
 """
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
@@ -145,7 +145,7 @@ IMPERSONATE = {
 
 LOGIN_REDIRECT_URL = "/my/home"
 
-STYLES = {'static': ['static/waedichoerbli/css/customize.css']}
+STYLES = {'static': ['waedichoerbli/css/customize.css']}
 
 """
     File & Storage Settings
