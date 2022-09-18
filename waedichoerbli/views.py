@@ -16,6 +16,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 
 from juntagrico.models import Member
 from juntagrico.entity.jobs import ActivityArea
+from juntagrico.dao.assignmentdao import AssignmentDao
 from juntagrico.dao.depotdao import DepotDao
 from juntagrico.dao.listmessagedao import ListMessageDao
 from juntagrico.util.temporal import weekdays, start_of_business_year, end_of_business_year
@@ -42,6 +43,21 @@ def special_work_areas(request):
 @login_required
 def download_area(request, success=False):
     return render(request, 'download_area.html', {'success': success})
+
+# new meber jobs and subscription page
+@login_required
+def member_jobs_subscription(request, success=False):
+    '''
+    All jobs of current user
+    '''
+    member = request.user.member
+    allassignments = AssignmentDao.assignments_for_member(member)
+ #   totalamount = allassignments.obejcts.aggregate(sum('amount'))
+    renderdict = {
+        'assignments': allassignments,
+ #       'totalamount': totalamount,
+    }
+    return render(request, 'member_jobs_subscription.html', renderdict)
 
 # depot list generation
 @staff_member_required

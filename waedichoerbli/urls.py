@@ -30,6 +30,9 @@ urlpatterns = [
     # special work areas
     path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),
 
+    # new memberjobs and subscriptions
+    path('my/memberjobsnew', waedichoerbli.member_jobs_subscription, name='member-jobs-subscription'),
+
     # download area
     path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
 

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load juntagrico.config %}
+{% block page_title %}
+    <h3>
+        {% trans "Alle deine Einsätze" %}
+    </h3>
+{% endblock %}
+{% block content %}
+    <h4>
+        {% trans "Deine Arbeitseinsätze" %}
+    </h4>
+    {% for assignment in assignments %}
+        {% if assignment.job.multiplier > 0 %}
+            <div class="row align-items-center mt-2">
+                <div class="col-md-6">
+                    <a href="{% url 'job' assignment.job.id %}">
+                        {{ assignment.job.type }}
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    {{ assignment.job.time|date:"d.m.y H:i" }}-{{ assignment.job.end_time|date:"H:i" }}
+                </div>
+
+                <div class="col-md-1">
+                    {{ assignment.job.duration}}{% trans "h" %}
+                </div>
+                <div class="col-md-2">
+                    {% if assignment.job.type.activityarea.core %}
+                        <img alt="Kernbereich" title="Kernbereich" src="{% images "core" %}"/>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <br><br>
+    <div>
+ {#   {% trans "Total geleistete Stunden im aktuellen Betriebsjahr:" %}   {{ totalamount }} #}
+    </div>
+    <br><br>
+    <h4>
+        {% trans "Deine Event-Anmeldungen" %}
+    </h4>
+    {% for assignment in assignments %}
+        {% if assignment.job.multiplier == 0 %}
+            <div class="row align-items-center mt-2">
+                <div class="col-md-6">
+                    <a href="{% url 'job' assignment.job.id %}">
+                        {{ assignment.job.type }}
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    {{ assignment.job.time|date:"d.m.y H:i" }}-{{ assignment.job.end_time|date:"H:i" }}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

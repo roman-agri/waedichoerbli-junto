@@ -3,10 +3,5 @@
         <a class="nav-link" href="{% url 'lists-mgmt' %}">Depotlistenerzeugung</a>
     </li>
   {% endif %}
-  {% if request.user.member == 'Erdmut Dienemann' or request.user.member == 'Patricia Portmann' %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'special-work-areas' %}">Spezial Einsätze - Test </a>
-     </li>
-  {% endif %}   
 </ul>
 <ul class="admin-menu nav flex-column">
