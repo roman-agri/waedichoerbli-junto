@@ -141,6 +141,7 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
+    'ALLOW_SUPERUSER': True,
 }
 
 LOGIN_REDIRECT_URL = "/my/home"
