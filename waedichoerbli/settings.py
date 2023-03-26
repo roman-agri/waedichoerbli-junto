@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'waedichoerbli',
     'adminsortable2',
     'juntagrico_assignment_request',
+    'juntagrico_billing',
     'polymorphic',
 
 ]

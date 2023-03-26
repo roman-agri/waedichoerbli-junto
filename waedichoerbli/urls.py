@@ -26,6 +26,7 @@ urlpatterns = [
     re_path(r'^', include('juntagrico.urls')),
     re_path(r'^$', juntagrico.views.home),
     re_path(r'^', include('juntagrico_assignment_request.urls')),
+    re_path(r'^', include('juntagrico_billing.urls')),
     
     # special work areas
     path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),

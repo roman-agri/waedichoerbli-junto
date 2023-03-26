@@ -1,4 +1,5 @@
-juntagrico==1.5.6
+juntagrico==1.5.7
 gunicorn==20.0.4
 psycopg2==2.8.4
 juntagrico-assignment-request==1.5.0
+juntagrico-billing==1.5.5
