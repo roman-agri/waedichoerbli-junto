@@ -1,13 +1,13 @@
    <li class="nav-item">
       <a class="nav-link" href="{% url 'download-area' %}">Downloads und FAQ</a>
    </li>
-   {% if "Erdi" in request.user.member or "padi" in request.user.member %}
-      <li class="nav-item">
-         <a class="nav-link" href="{% url 'member-jobs-subscription' %}">Test - Einsätze und Anmeldungen</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="{% url 'special-work-areas' %}">Test - Spezial Einsätze </a>
-       </li>
-  {% endif %}   
+{% if request.user.member.first_name == "Dienemann" or request.user.member.first_name == "Portmann" %}
+   <li class="nav-item">
+      <a class="nav-link" href="{% url 'member-jobs-subscription' %}">Test - Deine Einsätze und Anmeldungen</a>
+   </li>
+   <li class="nav-item">
+         <a class="nav-link" href="{% url 'special-work-areas' %}">Test - Spezielle Einsätze </a>
+   </li>
+{% endif %}
 </ul>
 <ul class="main-menu nav flex-column">
