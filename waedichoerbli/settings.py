@@ -216,6 +216,14 @@ DEPOT_LIST_GENERATION_DAYS = [6]
 VOCABULARY = {'package': 'Kiste'}
 
 """
+   Juntagrico-Billing
+"""
+# Anzeige des Rechnungen Menüs für normale Mitglieder
+BILLS_USERMENU = True  
+# Link zum Fälligkeits-Hinweis Dokument. Falls angegeben wird das auf der Rechnung angezeigt.
+#DUEDATE_NOTICE_URL= "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"  
+
+"""
    External Documents
 """
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
