@@ -221,7 +221,7 @@ VOCABULARY = {'package': 'Kiste'}
 # Anzeige des Rechnungen Menüs für normale Mitglieder
 BILLS_USERMENU = True  
 # Link zum Fälligkeits-Hinweis Dokument. Falls angegeben wird das auf der Rechnung angezeigt.
-#DUEDATE_NOTICE_URL= "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"  
+DUEDATE_NOTICE_URL= ""
 
 """
    External Documents
@@ -241,7 +241,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
         },
     },
