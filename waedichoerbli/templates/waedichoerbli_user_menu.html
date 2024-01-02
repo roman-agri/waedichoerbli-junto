@@ -1,7 +1,10 @@
    <li class="nav-item">
       <a class="nav-link" href="{% url 'download-area' %}">Downloads und FAQ</a>
    </li>
-{% if request.user.member.first_name == "Dienemann" or request.user.member.first_name == "Portmann" %}
+   <li class="nav-item">
+         <a class="nav-link" href="{% url 'rezepte' %}">Rezepte </a>
+   </li>
+{% if request.user.member.last_name == "Dienemann" or request.user.member.last_name == "Portmann" %}
    <li class="nav-item">
       <a class="nav-link" href="{% url 'member-jobs-subscription' %}">Test - Deine Einsätze und Anmeldungen</a>
    </li>

@@ -37,6 +37,9 @@ urlpatterns = [
     # download area
     path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
 
+    # rezepte
+    path('my/rezepte', waedichoerbli.rezepte, name='rezepte'),
+
     # depot list management
     path('my/pdf/manage', waedichoerbli.list_mgmt, name='lists-mgmt'),
     path('my/pdf/manage/success', waedichoerbli.list_mgmt, {'success': True}, name='lists-mgmt-success'),

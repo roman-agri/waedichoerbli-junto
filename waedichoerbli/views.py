@@ -44,6 +44,11 @@ def special_work_areas(request):
 def download_area(request, success=False):
     return render(request, 'download_area.html', {'success': success})
 
+# rezepte for members
+@login_required
+def rezepte(request, success=False):
+    return render(request, 'rezepte.html', {'success': success})
+
 # new meber jobs and subscription page
 @login_required
 def member_jobs_subscription(request, success=False):
@@ -52,10 +57,13 @@ def member_jobs_subscription(request, success=False):
     '''
     member = request.user.member
     allassignments = AssignmentDao.assignments_for_member(member)
- #   totalamount = allassignments.obejcts.aggregate(sum('amount'))
+    totalamount=0
+#   for assignment in allassignments:
+#        totalamount += assignment.job.duration__sum
+    
     renderdict = {
         'assignments': allassignments,
- #       'totalamount': totalamount,
+        'totalamount': totalamount,
     }
     return render(request, 'member_jobs_subscription.html', renderdict)
 
