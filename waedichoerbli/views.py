@@ -10,6 +10,7 @@ import base64
 import hmac
 import hashlib
 from urllib import parse
+from datetime import datetime
 from django.conf import settings
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -53,13 +54,11 @@ def rezepte(request, success=False):
 @login_required
 def member_jobs_subscription(request, success=False):
     '''
-    All jobs of current user
+    All jobs of current user and current business year
     '''
     member = request.user.member
-    allassignments = AssignmentDao.assignments_for_member(member)
-    totalamount=0
-#   for assignment in allassignments:
-#        totalamount += assignment.job.duration__sum
+    allassignments = AssignmentDao.assignments_for_member_current_business_year(member)
+    totalamount = 0
     
     renderdict = {
         'assignments': allassignments,

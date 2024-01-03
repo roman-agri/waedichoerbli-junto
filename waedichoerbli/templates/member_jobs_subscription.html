@@ -10,7 +10,7 @@
     <h4>
         {% trans "Deine Arbeitseinsätze" %}
     </h4>
-    {% for assignment in assignments %}
+    {% for assignment in assignments|dictsort:"job.time" %}
         {% if assignment.job.multiplier > 0 %}
             <div class="row align-items-center mt-2">
                 <div class="col-md-6">
@@ -35,7 +35,7 @@
     {% endfor %}
     <br><br>
     <div>
- {#   {% trans "Total geleistete Stunden im aktuellen Betriebsjahr:" %}   {{ totalamount }} #}
+{#    {% trans "Total geleistete Stunden im aktuellen Betriebsjahr:" %}   {{ totalamount }}  #}
     </div>
     <br><br>
     <h4>
