@@ -198,6 +198,7 @@ MAIL_TEMPLATE = "mails/email.html"
 EMAILS = {
     'password': 'waedichoerbli_emails/member/password_reset_mail.txt',
     's_created': 'waedichoerbli_emails/member/share_created.txt',
+    'b_sub': 'waedichoerbli_emails/billing/bill_notification.txt',
 }
 
 """
