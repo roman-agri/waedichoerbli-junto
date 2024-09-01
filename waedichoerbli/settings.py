@@ -211,8 +211,8 @@ CONTACTS = {
     "general": "info@waedichoerbli.ch"
 }
 ORGANISATION_WEBSITE = {
-    'name': "localhost",
-    'url': "https://localhost"
+    'name': "Wädichörbli",
+    'url': "https://junto.waedichoerbli.ch"
 }
 DEFAULT_FROM_EMAIL = "info@waedichoerbli.ch"
 MAIL_TEMPLATE = "mails/email.html"
