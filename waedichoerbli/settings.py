@@ -46,11 +46,11 @@ ROOT_URLCONF = 'waedichoerbli.urls'
 DATABASES = {   
     'default': {
         'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_ENGINE','django.db.backends.postgresql'), 
-        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME'), 
-        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER'),
-        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASS'),
-        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST'),
-        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT'),
+        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','waedichoerbli'), 
+        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER', 'lucash'),
+        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD', 'xxxxxxx'),
+        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST', 'xx.xx.xx.xx'),
+        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT', '28087'),
     }
 }
 
@@ -113,16 +113,14 @@ MIDDLEWARE = [
 ]
 
 # Email config fo django
-#EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND','django.core.mail.backends.console.EmailBackend')
-EMAIL_BACKEND = os.environ.get('JUNTAGRICO_EMAIL_BACKEND')
 EMAIL_HOST = os.environ.get('JUNTAGRICO_EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('JUNTAGRICO_EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('JUNTAGRICO_EMAIL_PASSWORD')
-EMAIL_PORT = os.environ.get('JUNTAGRICO_EMAIL_PORT')
-EMAIL_USE_TLS = os.environ.get('JUNTAGRICO_EMAIL_TLS')
-EMAIL_USE_SSL = os.environ.get('JUNTAGRICO_EMAIL_SSL')
+EMAIL_PORT = int(os.environ.get('JUNTAGRICO_EMAIL_PORT', '25' ))
+EMAIL_USE_TLS = os.environ.get('JUNTAGRICO_EMAIL_TLS', 'False')=='True'
+EMAIL_USE_SSL = os.environ.get('JUNTAGRICO_EMAIL_SSL', 'False')=='True'
 
-DEFAULT_MAILER = 'waedichoerbli.mailer.Mailer'
+#DEFAULT_MAILER = 'waedichoerbli.mailer.Mailer'
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
@@ -131,7 +129,7 @@ WHITELIST_EMAILS = []
 def whitelist_email_from_env(var_env_name):
     email = os.environ.get(var_env_name)
     if email:
-        WHITELIST_EMAILS.append(email.replace('@padi.li', '(\+\S+)?@padi.li'))
+        WHITELIST_EMAILS.append(email.replace('@gmail.com', '(\+\S+)?@gmail.com'))
 
 
 if DEBUG is True:
@@ -162,6 +160,11 @@ IMPERSONATE = {
 LOGIN_REDIRECT_URL = "/"
 
 STYLES = {'static': ['waedichoerbli/css/customize.css']}
+
+"""
+    Import & Export Settings
+"""
+IMPORT_EXPORT_EXPORT_PERMISSION_CODE = 'view'
 
 """
     File & Storage Settings
@@ -202,7 +205,7 @@ BUSINESS_YEAR_START = {"day":1, "month":6}
 BUSINESS_YEAR_CANCELATION_MONTH = 2
 MEMBERSHIP_END_MONTH = 5
 
-IMPORT_EXPORT_EXPORT_PERMISSION_CODE = 'view'
+
 
 """
   Outgoing-Mail Settings
@@ -230,7 +233,7 @@ ASSIGNMENT_UNIT = "HOURS"
 """
     Depots
 """
-DEPOT_LIST_GENERATION_DAYS = [0]
+DEPOT_LIST_GENERATION_DAYS = [6]
 
 """
    Appereance
@@ -246,7 +249,7 @@ VOCABULARY = {'package': 'Kiste',
 # Anzeige des Rechnungen Menüs für normale Mitglieder
 BILLS_USERMENU = True  
 # Link zum Fälligkeits-Hinweis Dokument. Falls angegeben wird das auf der Rechnung angezeigt.
-#DUEDATE_NOTICE_URL= "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"  
+DUEDATE_NOTICE_URL= ""
 
 
 """
@@ -254,6 +257,7 @@ BILLS_USERMENU = True
 """
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
+
 
 LOGGING = {
     'version': 1,
@@ -266,7 +270,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
         },
     },
