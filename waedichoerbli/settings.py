@@ -3,6 +3,7 @@ Django settings for waedichoerbli project.
 """
 
 import os
+from django.core.mail import send_mail
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,15 +29,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'juntagrico',
-    'impersonate',
-    'crispy_forms',
     'waedichoerbli',
-    'adminsortable2',
     'juntagrico_assignment_request',
     'juntagrico_billing',
+    'juntagrico',  # juntagrico muss neu nach den addons stehen
+    'fontawesomefree',  # benötigt ab 1.6
+    'import_export',  # benötigt ab 1.6
+    'impersonate',
+    'crispy_forms',
+    'adminsortable2',
     'polymorphic',
-
 ]
 
 ROOT_URLCONF = 'waedichoerbli.urls'
@@ -44,17 +46,18 @@ ROOT_URLCONF = 'waedichoerbli.urls'
 DATABASES = {   
     'default': {
         'ENGINE': os.environ.get('JUNTAGRICO_DATABASE_ENGINE','django.db.backends.postgresql'), 
-        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME','waedichoerbli'), 
-        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER', 'lucash'),
-        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASSWORD', 'xxxxxxx'),
-        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST', 'xx.xx.xx.xx'),
-        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT', '28087'),
+        'NAME': os.environ.get('JUNTAGRICO_DATABASE_NAME'), 
+        'USER': os.environ.get('JUNTAGRICO_DATABASE_USER'),
+        'PASSWORD': os.environ.get('JUNTAGRICO_DATABASE_PASS'),
+        'HOST': os.environ.get('JUNTAGRICO_DATABASE_HOST'),
+        'PORT': os.environ.get('JUNTAGRICO_DATABASE_PORT'),
     }
 }
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # location of your overriding templates
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -79,6 +82,7 @@ WSGI_APPLICATION = 'waedichoerbli.wsgi.application'
 
 
 LANGUAGE_CODE = 'de'
+
 
 SITE_ID = 1
 
@@ -108,15 +112,17 @@ MIDDLEWARE = [
     'django.contrib.sites.middleware.CurrentSiteMiddleware'
 ]
 
-
+# Email config fo django
+#EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND','django.core.mail.backends.console.EmailBackend')
+EMAIL_BACKEND = os.environ.get('JUNTAGRICO_EMAIL_BACKEND')
 EMAIL_HOST = os.environ.get('JUNTAGRICO_EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('JUNTAGRICO_EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('JUNTAGRICO_EMAIL_PASSWORD')
-EMAIL_PORT = int(os.environ.get('JUNTAGRICO_EMAIL_PORT', '25' ))
-EMAIL_USE_TLS = os.environ.get('JUNTAGRICO_EMAIL_TLS', 'False')=='True'
-EMAIL_USE_SSL = os.environ.get('JUNTAGRICO_EMAIL_SSL', 'False')=='True'
+EMAIL_PORT = os.environ.get('JUNTAGRICO_EMAIL_PORT')
+EMAIL_USE_TLS = os.environ.get('JUNTAGRICO_EMAIL_TLS')
+EMAIL_USE_SSL = os.environ.get('JUNTAGRICO_EMAIL_SSL')
 
-#DEFAULT_MAILER = 'waedichoerbli.mailer.Mailer'
+DEFAULT_MAILER = 'waedichoerbli.mailer.Mailer'
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
@@ -125,7 +131,7 @@ WHITELIST_EMAILS = []
 def whitelist_email_from_env(var_env_name):
     email = os.environ.get(var_env_name)
     if email:
-        WHITELIST_EMAILS.append(email.replace('@gmail.com', '(\+\S+)?@gmail.com'))
+        WHITELIST_EMAILS.append(email.replace('@padi.li', '(\+\S+)?@padi.li'))
 
 
 if DEBUG is True:
@@ -133,19 +139,27 @@ if DEBUG is True:
         if key.startswith("JUNTAGRICO_EMAIL_WHITELISTED"):
             whitelist_email_from_env(key)
             
+
 """
     base url and css settings
 """
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
 
 IMPERSONATE = {
     'REDIRECT_URL': '/my/profile',
     'ALLOW_SUPERUSER': True,
 }
 
-LOGIN_REDIRECT_URL = "/my/home"
+LOGIN_REDIRECT_URL = "/"
 
 STYLES = {'static': ['waedichoerbli/css/customize.css']}
 
@@ -153,7 +167,6 @@ STYLES = {'static': ['waedichoerbli/css/customize.css']}
     File & Storage Settings
 """
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
 MEDIA_ROOT = 'media'
 
 """
@@ -172,27 +185,35 @@ ORGANISATION_ADDRESS = {"name":"Genossenschaft Wädichörbli",
             "zip" : "8833",
             "city" : "Samstagern",
             "extra" : "Tel. 077 485 67 78"}
-
+ORGANISATION_PHONE = {"077 485 67 78"}      
+      
 """
  Accounting
-"""            
+"""
 ORGANISATION_BANK_CONNECTION = {"PC" : "46-110-7",
             "IBAN" : "CH41 0839 0031 8837 1000 9",
             "BIC" : "ABSOCH22",
             "NAME" : "Alternative Bank Schweiz AG",
             "ESR" : "01-9252-0"}
-CURRENCY= "CHF"   
+CURRENCY= "CHF"         
 SHARE_PRICE = "300"
 
 BUSINESS_YEAR_START = {"day":1, "month":6}
 BUSINESS_YEAR_CANCELATION_MONTH = 2
 MEMBERSHIP_END_MONTH = 5
 
+IMPORT_EXPORT_EXPORT_PERMISSION_CODE = 'view'
+
 """
   Outgoing-Mail Settings
 """  
-INFO_EMAIL = "info@waedichoerbli.ch"
-SERVER_URL = "junto.waedichoerbli.ch"
+CONTACTS = {
+    "general": "info@waedichoerbli.ch"
+}
+ORGANISATION_WEBSITE = {
+    'name': "localhost",
+    'url': "https://localhost"
+}
 DEFAULT_FROM_EMAIL = "info@waedichoerbli.ch"
 MAIL_TEMPLATE = "mails/email.html"
 EMAILS = {
@@ -203,18 +224,21 @@ EMAILS = {
 
 """
     Jobs
-""" 
+"""    
 ASSIGNMENT_UNIT = "HOURS"
 
 """
     Depots
 """
-DEPOT_LIST_GENERATION_DAYS = [6]
+DEPOT_LIST_GENERATION_DAYS = [0]
 
 """
    Appereance
 """
-VOCABULARY = {'package': 'Kiste'}
+VOCABULARY = {'package': 'Kiste',
+              'assignment' : 'Arbeitseinsatz',
+              'assignment_pl' : 'Arbeitseinsätze',
+              } 
 
 """
    Juntagrico-Billing
@@ -222,14 +246,14 @@ VOCABULARY = {'package': 'Kiste'}
 # Anzeige des Rechnungen Menüs für normale Mitglieder
 BILLS_USERMENU = True  
 # Link zum Fälligkeits-Hinweis Dokument. Falls angegeben wird das auf der Rechnung angezeigt.
-DUEDATE_NOTICE_URL= ""
+#DUEDATE_NOTICE_URL= "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"  
+
 
 """
    External Documents
 """
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
-
 
 LOGGING = {
     'version': 1,
@@ -242,7 +266,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': 'INFO',
+            'level': 'DEBUG',
             'propagate': True,
         },
     },

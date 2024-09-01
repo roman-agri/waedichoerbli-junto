@@ -1,0 +1,21 @@
+{% extends "juntagrico/menu/user.html" %}
+{% load util %}
+{% block extend %}
+    {{ block.super }}
+    <ul class="main-menu nav flex-column">
+       <li class="nav-item">
+          <a class="nav-link" href="{% url 'download-area' %}">Downloads und FAQ</a>
+       </li>
+       <li class="nav-item">
+             <a class="nav-link" href="{% url 'rezepte' %}">Rezepte </a>
+       </li>
+       <li class="nav-item">
+          <a class="nav-link" href="{% url 'member-jobs-subscription' %}">Deine Einsätze und Anmeldungen</a>
+       </li>
+    {% if request.user.member.last_name == "Dienemann" or request.user.member.last_name == "Portmann" %}
+       <li class="nav-item">
+             <a class="nav-link" href="{% url 'special-work-areas' %}">Test - Spezielle Arbeitsgruppen</a>
+       </li>
+    {% endif %}
+    </ul>
+{% endblock%}

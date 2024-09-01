@@ -24,10 +24,9 @@ urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^impersonate/', include('impersonate.urls')),
     re_path(r'^', include('juntagrico.urls')),
-    re_path(r'^$', juntagrico.views.home),
     re_path(r'^', include('juntagrico_assignment_request.urls')),
     re_path(r'^', include('juntagrico_billing.urls')),
-    
+ 
     # special work areas
     path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),
 
@@ -36,9 +35,6 @@ urlpatterns = [
 
     # download area
     path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
-
-    # rezepte
-    path('my/rezepte', waedichoerbli.rezepte, name='rezepte'),
 
     # depot list management
     path('my/pdf/manage', waedichoerbli.list_mgmt, name='lists-mgmt'),
