@@ -13,7 +13,7 @@
 {% trans "Hallo" %}
 
 {% blocktrans %}Wichtige Information zu Beginn: Die Mails landen manchmal im Spam. Du kannst dem aber vorbeugen, in dem du folgende 
-Mailadressen als Kontakt deiner Kontaktliste im Mailpostfach hinzufügst: sebastian@waedichoerbli.ch ,  info@waedichoerbli.ch  ,  
+Mailadressen als Kontakt deiner Kontaktliste im Mailpostfach hinzufügst: finanzen@waedichoerbli.ch ,  info@waedichoerbli.ch  ,  
 erdmut@waedichoerbli.ch {% endblocktrans %}
 
 {% blocktrans with sc=shares|length%}Du hast bei {{ v_d_enriched_organisation }} {{sc}} {{ v_share_pl }} bestellt{% endblocktrans %}:
