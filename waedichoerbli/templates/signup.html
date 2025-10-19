@@ -9,25 +9,28 @@
 
 
 {% block intro %}
-    {% config "enable_shares" as c_enable_shares %}
-    {% config "share_price" as c_share_price %}
-    {% enriched_organisation "D" as v_d_enriched_organisation %}
-    {% block intro_1 %}
+                <div class="col-md-12">
+                    <h4>Probeabo:</h4>
+                    Für ein Probeabo kannst du hier deine Daten einfügen, welche für die Anmeldung
+                    notwendig sind. Wir werden dir keine Anteilscheine in Rechnung stellen, benötigen jedoch
+                    trotzdem gewisse Informationen.
+
+                    <h4>Regulärer Beitritt:</h4>
         <p>Interessiert an {% enriched_organisation "D" %}?</p>
     {% endblock %}
 
-    {% if c_enable_shares %}
+   
         {% block intro_with_shares %}
             <p>
-                {% blocktrans trimmed with v_share=vocabulary.share v_share_pl=vocabulary.share_pl v_subscription=vocabulary.subscription %}
+                
                     Die Mitgliedschaft bei {{ v_d_enriched_organisation }} ist geknüpft an den Erwerb von
-                    {{ v_share_pl }} in der Höhe
+                    Anteilscheinen in der Höhe
                     von CHF {{ c_share_price }} pro {{ v_share }}. Die Anzahl {{ v_share_pl }}
                     ist abhängig von den {{ v_subscription }}-Bestandteilen. Die {{ v_share_pl }} sind das
                     Kapital, das vor allem zur Finanzierung von Investitionen –
                     zum Beispiel Infrastruktur - verwendet wird.
-                    Beim Austritt werden die {{ v_share_pl }} rückerstattet.
-                {% endblocktrans %}
+                    Beim Austritt werden die Anteilscheine rückerstattet.
+               
             </p>
         {% endblock %}
     {% endif %}
