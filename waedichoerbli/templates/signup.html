@@ -14,10 +14,10 @@
     {% block intro_1 %}
         <p>Interessiert an {% enriched_organisation "D" %}?</p>
 <div class="col-md-12">
-                    <h4>Schnupperabo:</h4>
-                    Für ein Schnupperabo kannst du hier deine Daten einfügen, welche für die Anmeldung
+                    <h4>Probeabo:</h4>
+                    Für ein Probeabo kannst du hier deine Daten einfügen, welche für die Anmeldung
                     notwendig sind. Wir werden dir keine Anteilscheine in Rechnung stellen, benötigen jedoch
-                    trotzdem gewisse Informationen.
+                    dennoch gewisse Informationen.
 
                     <h4>Regulärer Beitritt:</h4>
     {% endblock %}
@@ -41,9 +41,8 @@
     <p>
         {% block intro_2 %}
             {% blocktrans trimmed with v_member_type=vocabulary.member_type v_member_type_pl=vocabulary.member_type_pl %}
-                Die {{ v_member_type_pl }} tragen im Rahmen ihrer Motivationen, Prioritäten und
-                Möglichkeiten gemeinsam zum Gelingen des Betriebes bei.
-                Zusätzliches wie auch spontanes Engagement ist jederzeit willkommen.
+                Die {{ v_member_type_pl }} tragen im Rahmen ihrer Motivation und Möglichkeiten
+                 gemeinsam zum Gelingen des Betriebes bei.
             {% endblocktrans %}
         {% endblock %}
     </p>
