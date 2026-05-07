@@ -10,19 +10,16 @@
 {% enriched_organisation "D" as v_d_enriched_organisation %}
 {% vocabulary "share" as v_share %}
 {% vocabulary "share_pl" as v_share_pl %}
-{% trans "Hallo" %}
+{% trans "Hallo und vielen Dank für dein Interesse an der Genossenschaft Wädichörbli" %}
 
-{% blocktrans %}Wichtige Information zu Beginn: Die Mails landen manchmal im Spam. Du kannst dem aber vorbeugen, in dem du folgende 
+{% blocktrans %}Du bist neu dabei? Dann haben wir hier eine hilfreiche Information zu Beginn: Unsere Mails landen manchmal im Spam. Du kannst dem aber vorbeugen, in dem du folgende 
 Mailadressen als Kontakt deiner Kontaktliste im Mailpostfach hinzufügst: finanzen@waedichoerbli.ch ,  info@waedichoerbli.ch  ,  
-erdmut@waedichoerbli.ch {% endblocktrans %}
+garten@waedichoerbli.ch {% endblocktrans %}
 
 {% blocktrans with sc=shares|length%}Du hast bei {{ v_d_enriched_organisation }} {{sc}} {{ v_share_pl }} bestellt{% endblocktrans %}:
 {% for share in shares %}{% blocktrans with sid=share.id %}{{ v_share }} mit Systemnummer {{ sid }}{% endblocktrans %}
 {% endfor %}
-{% blocktrans with sc=shares|length %} Wenn du gerade ein Probeabo bestellt hast, kannst du diese Email solange auf die Seite legen, 
-bis du ein festes Abo bestellen möchtest, da beim Probeabo der Kauf von Anteilsscheinen nicht vorraussetzung ist. 
-Erst wenn du dich für ein festes Abo entscheidest, musst du deine bestellten Anteilsscheine 
-auch kaufen  - indem du die untenstehende Rechung dann begleichst:{% endblocktrans %}
+
 {% blocktrans with sc=shares|length %}Bitte überweise {{sc}} Mal den Betrag von {{ c_currency }} {{ c_share_price }} auf das folgende Konto{% endblocktrans %}:
     {{ c_addr.name }}
     {% if c_addr.extra %}{{ c_addr.extra }}{% endif %}
@@ -37,6 +34,6 @@ auch kaufen  - indem du die untenstehende Rechung dann begleichst:{% endblocktra
 (dies ist vor allem wichtig wenn du diese/n/s {{ v_share }} für jemand anderen bezahlst){% endblocktrans %}
 
 {% blocktrans trimmed %}
-Bis bald und liebe Grüsse die {{ c_organisation_name }}-Betriebsgruppe
+liebe Grüsse von der {{ c_organisation_name }}-Betriebsgruppe
 {% endblocktrans %}
 {% endblock %}
