@@ -184,8 +184,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ORGANISATION_NAME = "Wädichörbli"
 ORGANISATION_LONG_NAME = "Genossenschaft Wädichörbli"
 ORGANISATION_ADDRESS = {"name":"Genossenschaft Wädichörbli", 
-            "street" : "Froh Ussicht",
-            "number" : "",
+            "street" : "Obere Schwandenstrasse",
+            "number" : "18",
             "zip" : "8833",
             "city" : "Samstagern",
             "extra" : "Tel. 077 485 67 78"}
