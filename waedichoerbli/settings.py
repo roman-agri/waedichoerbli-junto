@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('JUNTAGRICO_SECRET_KEY')
 
 DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'False')=='True'
 # set staging for testing to 1
-JUNTAGRICO_STAGING=1
+JUNTAGRICO_STAGING='1'
 
 ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science', 'localhost',]
 
@@ -259,7 +259,7 @@ DUEDATE_NOTICE_URL= ""
 """
 if os.environ.get('JUNTAGRICO_STAGING') == '1':
     # staging css einbinden
-    STYLES['static'].append('css/staging.css')
+    STYLES['static'].append('waedichoerbli/css/staging.css')
     # staging URL erlauben
     ALLOWED_HOSTS.append('waedichoerbli-staging.juntagrico.science')
     # E-Mails Deaktivieren
