@@ -20,3 +20,5 @@ views.py
 mailer.py
 media/*.pdf
 *.log
+waedichoerbli/templates/special_work_areas_notused.html
+waedichoerbli/templates/list_mgmt_notused.html

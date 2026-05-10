@@ -27,8 +27,6 @@ urlpatterns = [
     re_path(r'^', include('juntagrico_assignment_request.urls')),
     re_path(r'^', include('juntagrico_billing.urls')),
  
-    # special work areas
-    path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),
 
     # download area
     path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
