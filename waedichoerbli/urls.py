@@ -35,12 +35,6 @@ urlpatterns = [
 
     # rezepte
     path('my/rezepte', waedichoerbli.rezepte, name='rezepte'),
-
-    # depot list management
-    path('my/pdf/manage', waedichoerbli.list_mgmt, name='lists-mgmt'),
-    path('my/pdf/manage/success', waedichoerbli.list_mgmt, {'success': True}, name='lists-mgmt-success'),
-    path('my/pdf/manage/generate', waedichoerbli.list_generate, name='lists-generate'),
-    path('my/pdf/manage/generate/future', waedichoerbli.list_generate, {'future': True}, name='lists-generate-future'),
     
 ]    
 
