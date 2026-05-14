@@ -258,16 +258,13 @@ DUEDATE_NOTICE_URL= ""
 """
     für Staging kommentar gänsefüsschen bei den codezeilen löschen
 """
-
-"""
 if os.environ.get('JUNTAGRICO_STAGING') == '1':
     # staging css einbinden
     STYLES['static'].append('waedichoerbli/css/staging.css')
     # staging URL erlauben
     ALLOWED_HOSTS.append('waedichoerbli-staging.juntagrico.science')
     # E-Mails Deaktivieren
-    EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
-"""
+
 
 """
    External Documents
