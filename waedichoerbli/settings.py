@@ -13,8 +13,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('JUNTAGRICO_SECRET_KEY')
 
 DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'False')=='True'
-# set staging for testing to 1
-JUNTAGRICO_STAGING='1'
+
+# set staging for testing-instance to 1
+JUNTAGRICO_STAGING='0'
 
 ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science', 'localhost',]
 
