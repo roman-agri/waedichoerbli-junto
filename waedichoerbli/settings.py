@@ -256,7 +256,9 @@ BILLS_USERMENU = True
 DUEDATE_NOTICE_URL= ""
 
 """
-    Staging
+    für Staging kommentar gänsefüsschen bei den codezeilen löschen
+"""
+
 """
 if os.environ.get('JUNTAGRICO_STAGING') == '1':
     # staging css einbinden
@@ -265,6 +267,7 @@ if os.environ.get('JUNTAGRICO_STAGING') == '1':
     ALLOWED_HOSTS.append('waedichoerbli-staging.juntagrico.science')
     # E-Mails Deaktivieren
     EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
+"""
 
 """
    External Documents
