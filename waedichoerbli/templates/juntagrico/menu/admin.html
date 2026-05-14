@@ -2,10 +2,6 @@
 {% block extend %}
     {{ block.super }}
     <ul class="admin-menu nav flex-column">
-      {% if perms.juntagrico.can_view_lists %}
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'lists-mgmt' %}">Depotlistenerzeugung</a>
-        </li>
-      {% endif %}
+     
     </ul>   
 {% endblock%}

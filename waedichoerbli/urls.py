@@ -27,23 +27,12 @@ urlpatterns = [
     re_path(r'^', include('juntagrico_assignment_request.urls')),
     re_path(r'^', include('juntagrico_billing.urls')),
  
-    # special work areas
-    path('my/specialwork', waedichoerbli.special_work_areas, name='special-work-areas'),
-
-    # new memberjobs and subscriptions
-    path('my/memberjobsnew', waedichoerbli.member_jobs_subscription, name='member-jobs-subscription'),
 
     # download area
     path('my/downloadarea', waedichoerbli.download_area, name='download-area'),
 
     # rezepte
     path('my/rezepte', waedichoerbli.rezepte, name='rezepte'),
-
-    # depot list management
-    path('my/pdf/manage', waedichoerbli.list_mgmt, name='lists-mgmt'),
-    path('my/pdf/manage/success', waedichoerbli.list_mgmt, {'success': True}, name='lists-mgmt-success'),
-    path('my/pdf/manage/generate', waedichoerbli.list_generate, name='lists-generate'),
-    path('my/pdf/manage/generate/future', waedichoerbli.list_generate, {'future': True}, name='lists-generate-future'),
     
 ]    
 
