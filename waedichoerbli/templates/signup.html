@@ -69,8 +69,10 @@
                                 {% trans "Betriebsreglement" %}
                             </a>
                         </li>
+                    {% endif %}
+                    {% if c_grundlagen.strip %}
                      <li>
-                            <a target="_blank" href= "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
+                            <a target="_blank" href= "{{ c_grundlagen|safe }}">
                                 {% trans "GrundlagenPapier" %}
                             </a>
                           </li>
