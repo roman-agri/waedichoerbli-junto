@@ -14,10 +14,10 @@ SECRET_KEY = os.environ.get('JUNTAGRICO_SECRET_KEY')
 
 DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'False')=='True'
 
-# set staging for testing-instance to 1
+# set staging for testing-instance to 1 & ALLOWED_HOSTS add 'waedichoerbli-staging.juntagrico.science'
 JUNTAGRICO_STAGING='1'
 
-ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science', 'localhost',]
+ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science','waedichoerbli-staging.juntagrico.science','localhost',]
 
 
 # Application definition
