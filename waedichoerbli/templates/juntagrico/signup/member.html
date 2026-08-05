@@ -49,7 +49,6 @@
 
     {% config "bylaws" as c_bylaws %}
     {% config "business_regulations" as c_business_regulations %}
-    {% config "grundlagen" as c_grundlagen %}
     {% if c_bylaws.strip or c_business_regulations.strip %}
         {% block read_instructions %}
             <p>
@@ -72,7 +71,7 @@
                         </li>
                     {% endif %}
                         <li>
-                            <a target="_blank" href="{{ c_grundlagen|safe }}">
+                            <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
                                 {% trans "Grundlagenpapier" %}
                             </a>
                         </li>

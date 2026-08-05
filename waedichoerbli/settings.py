@@ -272,7 +272,7 @@ if os.environ.get('JUNTAGRICO_STAGING') == '1':
 """
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
-GRUNDLAGEN = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf"
+GRUNDLAGEN = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf" #ist fix codiert im signup/member.html
 
 
 LOGGING = {
