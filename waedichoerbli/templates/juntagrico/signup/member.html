@@ -50,7 +50,7 @@
     {% config "bylaws" as c_bylaws %}
     {% config "business_regulations" as c_business_regulations %}
     {% config "grundlagen" as c_grundlagen %}
-    {% if c_bylaws.strip or c_business_regulations.strip or c_grundlagen.strip %}
+    {% if c_bylaws.strip or c_business_regulations.strip %}
         {% block read_instructions %}
             <p>
                 {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
@@ -67,7 +67,7 @@
                     {% if c_business_regulations.strip %}
                         <li>
                             <a target="_blank" href="{{ c_business_regulations|safe }}">
-                                {% trans "Betriebsreglement1" %}
+                                {% trans "Betriebsreglement2" %}
                             </a>
                         </li>
                     {% endif %}
