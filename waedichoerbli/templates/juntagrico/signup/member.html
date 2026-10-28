@@ -26,13 +26,13 @@
         {% block intro_with_shares %}
             <p>
                 {% blocktrans trimmed with v_share=vocabulary.share v_share_pl=vocabulary.share_pl v_subscription=vocabulary.subscription %}
-                    Die Mitgliedschaft bei {{ v_d_enriched_organisation }} ist geknüpft an den Erwerb von
-                    {{ v_share_pl }} in der Höhe
+                    Ein Abo bei der Bio Solawi Oberschwandenhof GmbH ist geknüpft an den Erwerb von
+                    {{ v_share_pl }} bei der Genossenschaft Wädichörbli in der Höhe 
                     von CHF {{ c_share_price }} pro {{ v_share }}. Die Anzahl {{ v_share_pl }}
                     ist abhängig von den {{ v_subscription }}-Bestandteilen. Die {{ v_share_pl }} sind das
                     Kapital, das vor allem zur Finanzierung von Investitionen –
                     zum Beispiel Infrastruktur - verwendet wird.
-                    Beim Austritt werden die {{ v_share_pl }} rückerstattet.
+                    Bei Beendigung eines Abos kann die Mitgliedschaft in der Genossenschaft Wädichörbli auch beendet und die {{ v_share_pl }} rückerstattet werden. 
                 {% endblocktrans %}
             </p>
         {% endblock %}
@@ -41,8 +41,11 @@
     <p>
         {% block intro_2 %}
             {% blocktrans trimmed with v_member_type=vocabulary.member_type v_member_type_pl=vocabulary.member_type_pl %}
-                Die {{ v_member_type_pl }} tragen im Rahmen ihrer Motivation und Möglichkeiten
-                 gemeinsam zum Gelingen des Betriebes bei: Im stillen Abo ist der finanzielle Beitrag grösser, im günstigeren Kernabo ist dafür die aktive Beteiligung gern gesehen.
+                Die AbonenntInnen und {{ v_member_type_pl }} können im Rahmen ihrer Motivation und Möglichkeiten
+                 gemeinsam zum Gelingen des Betriebes beitragen und dadurch beim Gemüse ein Abo zu reduziertem Preis erhalten. 
+        Eine Hilfe bei der Obsternte ist auch sehr gern gesehen. Obst und Gemüseernten oderandere Tätigkeiten sind oft sehr erfüllende Erlebnisse. 
+        Gemeinsam anpacken mit der ganzen Familie ist gerade beim ernten beliebt.
+        
             {% endblocktrans %}
         {% endblock %}
     </p>
@@ -53,26 +56,31 @@
         {% block read_instructions %}
             <p>
                 {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
-                Bevor du dich als {{ v_member_type }} anmeldest, lies bitte Folgendes durch:
+                Bevor du dich anmeldest, lies bitte Folgendes durch:
                 {% endblocktrans %}
                 <ul>
+                     <li>
+                            <a target="_blank" href="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf.pdf">
+                                {% trans "Abo Regelungen der Bio Solawi Oberschwandenhof GmbH" %}
+                            </a>
+                        </li>
                     {% if c_bylaws.strip %}
                         <li>
                             <a target="_blank" href="{{ c_bylaws|safe }}">
-                                {% trans "Statuten" %}
+                                {% trans "Statuten der Genossenschaft Wädichörbli" %}
                             </a>
                         </li>
                     {% endif %}
                     {% if c_business_regulations.strip %}
                         <li>
                             <a target="_blank" href="{{ c_business_regulations|safe }}">
-                                {% trans "Betriebsreglement" %}
+                                {% trans "Betriebsreglement der Genossenschaft Wädichörbli" %}
                             </a>
                         </li>
                     {% endif %}
                         <li>
                             <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
-                                {% trans "Grundlagenpapier" %}
+                                {% trans "Grundlagenpapier der Genossenschaft Wädichörbli" %}
                             </a>
                         </li>
                 </ul>
