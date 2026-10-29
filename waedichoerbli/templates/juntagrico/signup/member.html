@@ -59,7 +59,8 @@
                 Bevor du dich anmeldest, lies bitte Folgendes durch:
                 {% endblocktrans %}
                 <ul>
-                     <li>
+                    <p> 
+                        <li>
                             <a target="_blank" href="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf">
                                 {% trans "Abo Regelungen der Bio Solawi Oberschwandenhof GmbH" %}
                             </a>
@@ -68,7 +69,7 @@
                     {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
                 Indem du dich unten anmeldest, erklärst du dich mit den Abo Regelungen gegenüber der Bio Solawi Oberschwandenhof GmbH einverstanden.
                 {% endblocktrans %}
-                      <br>
+                   </p>
                     {% if c_bylaws.strip %}
                         <li>
                             <a target="_blank" href="{{ c_bylaws|safe }}">
