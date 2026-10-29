@@ -21,13 +21,13 @@ garten@waedichoerbli.ch {% endblocktrans %}
 {% endfor %}
 
 {% blocktrans with sc=shares|length %}Bitte überweise {{sc}} Mal den Betrag von {{ c_currency }} {{ c_share_price }} auf das folgende Konto{% endblocktrans %}:
-    {{ c_addr.name }}
-    {% if c_addr.extra %}{{ c_addr.extra }}{% endif %}
-    {{ c_addr.street }} {{ c_addr.number }}
-    {{ c_addr.zip }} {{ c_addr.city }}
-    {{ c_bank.NAME }}
-    {% trans "Postkonto-Nummer" %}: {{ c_bank.PC }}
-    {% trans "IBAN" %}: {{ c_bank.IBAN }}
+  
+    {% trans "Genossenschaft Wädichörli" %}
+    {% trans "Obere Schwandenstrasse 18" %}
+    {% trans "8833 Samstagern" %}
+    {% trans " Alternative Bank Schweiz AG" %}
+    {% trans "Postkonto-Nummer: 46-110-7" %}
+    {% trans "IBAN: CH41 0839 0031 8837 1000 9" %}
     {% trans "BIC: ABSOCH22" %}
 
 {% blocktrans %} Gib im Betreff die Systemnummer an und die Emailadresse der Halterin oder des Halters des/r {{ v_share }} an
