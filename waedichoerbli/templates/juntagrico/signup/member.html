@@ -64,6 +64,11 @@
                                 {% trans "Abo Regelungen der Bio Solawi Oberschwandenhof GmbH" %}
                             </a>
                         </li>
+                    
+                    {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
+                Indem du dich unten anmeldest, erklärst du dich mit den Abo Regelungen gegenüber der Bio Solawi Oberschwandenhof GmbH einverstanden.
+                {% endblocktrans %}
+                    
                     {% if c_bylaws.strip %}
                         <li>
                             <a target="_blank" href="{{ c_bylaws|safe }}">
