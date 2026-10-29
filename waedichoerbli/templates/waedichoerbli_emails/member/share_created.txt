@@ -28,7 +28,7 @@ garten@waedichoerbli.ch {% endblocktrans %}
     {{ c_bank.NAME }}
     {% trans "Postkonto-Nummer" %}: {{ c_bank.PC }}
     {% trans "IBAN" %}: {{ c_bank.IBAN }}
-    {% trans "BIC" %}: {{ c_bank.BIC }}
+    {% trans "BIC: ABSOCH22" %}
 
 {% blocktrans %} Gib im Betreff die Systemnummer an und die Emailadresse der Halterin oder des Halters des/r {{ v_share }} an
 (dies ist vor allem wichtig wenn du diese/n/s {{ v_share }} für jemand anderen bezahlst){% endblocktrans %}
