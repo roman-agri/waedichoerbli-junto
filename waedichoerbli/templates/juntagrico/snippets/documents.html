@@ -18,17 +18,17 @@
                 {% endif %}
                 {% if c_business_regulations.strip %}
                     <li>
-                        <a href="{{ c_business_regulations }}">{% trans "Betriebsreglement" %}</a>
+                        <a target="_blank" href="{{ c_business_regulations }}">{% trans "Betriebsreglement" %}</a>
                     </li>
                 {% endif %}
-                {% if c_grundlagen.strip %}
-                    <li>
-                        <a href="{{ c_grundlagen }}">{% trans "Grundlagenpapier" %}</a>
-                    </li>
-                {% endif %}
+                 <li>
+                    <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
+                        {% trans "Grundlagenpapier" %}
+                    </a>
+                </li>
                 {% if c_faq.strip %}
                     <li>
-                        <a href="{{ c_faq }}">{% trans "GrundlagenpapierFAQ" %}</a>
+                        <a href="{{ c_faq }}">{% trans "Häufig gestellte Fragen" %}</a>
                     </li>
                 {% endif %}
             </ul>
