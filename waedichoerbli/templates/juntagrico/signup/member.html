@@ -10,6 +10,7 @@
 {% block intro %}
     {% config "enable_shares" as c_enable_shares %}
     {% config "share_price" as c_share_price %}
+    {% config "grundlagen_papier" as c_grundlagen_papier %}
     {% enriched_organisation "D" as v_d_enriched_organisation %}
     {% block intro_1 %}
         <p>Interessiert an der Solawi Oberschwandenhof/ {% enriched_organisation "D" %}?</p>
@@ -54,50 +55,52 @@
     {% config "business_regulations" as c_business_regulations %}
     {% if c_bylaws.strip or c_business_regulations.strip %}
         {% block read_instructions %}
-            <p>
-                {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
-                Bevor du dich anmeldest, lies bitte Folgendes durch:
-                {% endblocktrans %}
-                <ul>
-                    <p> 
-                        <li>
-                            <a target="_blank" href="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf">
-                                {% trans "Abo Regelungen der Bio Solawi Oberschwandenhof GmbH" %}
-                            </a>
-                        </li>
-                    
-                    {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
-                Indem du dich unten anmeldest, erklärst du dich mit den Abo Regelungen gegenüber der Bio Solawi Oberschwandenhof GmbH einverstanden.
-                {% endblocktrans %}
-                   </p>
-                    {% if c_bylaws.strip %}
-                        <li>
-                            <a target="_blank" href="{{ c_bylaws|safe }}">
-                                {% trans "Statuten der Genossenschaft Wädichörbli" %}
-                            </a>
-                        </li>
-                    {% endif %}
-                    {% if c_business_regulations.strip %}
-                        <li>
-                            <a target="_blank" href="{{ c_business_regulations|safe }}">
-                                {% trans "Betriebsreglement der Genossenschaft Wädichörbli" %}
-                            </a>
-                        </li>
-                    {% endif %}
-                        <li>
-                            <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
-                                {% trans "Grundlagenpapier der Genossenschaft Wädichörbli" %}
-                            </a>
-                        </li>
-                </ul>
-            </p>
-     </p>
+        <p>
+            {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
+            Bevor du dich anmeldest, lies bitte Folgendes durch:
+            {% endblocktrans %}
+            <ul>
+                <p> 
+                    <li>
+                        <a target="_blank" href="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf">
+                            {% trans "Abo Regelungen der Bio Solawi Oberschwandenhof GmbH" %}
+                        </a>
+                    </li>
+                
+            {% blocktrans trimmed with v_member_type=vocabulary.member_type %}
+            Indem du dich unten anmeldest, erklärst du dich mit den Abo Regelungen gegenüber der Bio Solawi Oberschwandenhof GmbH einverstanden.
+            {% endblocktrans %}
+               </p>
+                {% if c_bylaws.strip %}
+                    <li>
+                        <a target="_blank" href="{{ c_bylaws|safe }}">
+                            {% trans "Statuten der Genossenschaft Wädichörbli" %}
+                        </a>
+                    </li>
+                {% endif %}
+                {% if c_business_regulations.strip %}
+                    <li>
+                        <a target="_blank" href="{{ c_business_regulations|safe }}">
+                            {% trans "Betriebsreglement der Genossenschaft Wädichörbli" %}
+                        </a>
+                    </li>
+                {% endif %}
+                {% if c_grundlagen_papier.strip %}
+                    <li>
+                        <a target="_blank" href="{{ c_grundlagen_papier|safe }}">
+                            {% trans "Grundlagenpapier der Genossenschaft Wädichörbli" %}
+                        </a>
+                    </li>
+                {% endif %}
+                    <li>
+                        <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
+                            {% trans "Grundlagenpapier der Genossenschaft Wädichörbli" %}
+                        </a>
+                    </li>
+            </ul>
+        </p>
         {% endblock %}
     {% endif %}
 {% endblock %}
 
-{% block content %}
-    <form action="" method="post">
-        {% crispy form %}
-    </form>
-{% endblock %}
+
