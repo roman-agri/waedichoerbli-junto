@@ -273,6 +273,7 @@ if os.environ.get('JUNTAGRICO_STAGING') == '1':
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
 #Die GrundlagenPapiere sind fix codiert im templates/juntagrico/signup/member.html
+GRUNDLAGEN_PAPIER = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf"
 FAQ_DOC = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf"
 
 

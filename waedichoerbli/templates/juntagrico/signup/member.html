@@ -10,7 +10,6 @@
 {% block intro %}
     {% config "enable_shares" as c_enable_shares %}
     {% config "share_price" as c_share_price %}
-    {% config "grundlagen_papier" as c_grundlagen_papier %}
     {% enriched_organisation "D" as v_d_enriched_organisation %}
     {% block intro_1 %}
         <p>Interessiert an der Solawi Oberschwandenhof/ {% enriched_organisation "D" %}?</p>
@@ -53,6 +52,7 @@
 
     {% config "bylaws" as c_bylaws %}
     {% config "business_regulations" as c_business_regulations %}
+    {% config "grundlagen_papier" as c_grundlagen_papier %}
     {% if c_bylaws.strip or c_business_regulations.strip %}
         {% block read_instructions %}
         <p>
