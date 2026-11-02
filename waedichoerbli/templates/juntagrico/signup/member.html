@@ -92,15 +92,15 @@
                         </a>
                     </li>
                 {% endif %}
-                    <li>
-                        <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
-                            {% trans "Grundlagenpapier der Genossenschaft Wädichörbli" %}
-                        </a>
-                    </li>
+
             </ul>
         </p>
         {% endblock %}
     {% endif %}
 {% endblock %}
-
+{% block content %}
+    <form action="" method="post">
+        {% crispy form %}
+    </form>
+{% endblock %}
 
