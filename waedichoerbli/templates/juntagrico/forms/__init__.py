@@ -240,8 +240,8 @@ class RegisterMemberForm(MemberBaseForm):
     documents = [
         (gettext_lazy('die Statuten'), Config.bylaws),
         (gettext_lazy('das Betriebsreglement'), Config.business_regulations),
-        (gettext_lazy('das Grundlagenpapier'), Config.grundlagen_papier),
-        (gettext_lazy('die DSGVO Infos'), Config.gdpr_info),
+        (gettext_lazy('das Grundlagenpapier'), Config.gdpr_info),
+# ori        (gettext_lazy('die DSGVO Infos'), Config.gdpr_info),
     ]
     text = {
         'accept_with_docs': gettext_lazy(
