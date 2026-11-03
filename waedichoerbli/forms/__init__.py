@@ -236,12 +236,13 @@ class MemberBaseForm(ModelForm):
 class RegisterMemberForm(MemberBaseForm):
     comment = CharField(required=False, max_length=4000, label=gettext_lazy('Kommentar'), widget=Textarea(attrs={"rows": 3}))
     agb = BooleanField(required=True)
-
+#customized Grundlagenpapier, Abo Regelungen
     documents = [
         (gettext_lazy('die Statuten'), Config.bylaws),
         (gettext_lazy('das Betriebsreglement'), Config.business_regulations),
-        (gettext_lazy('das Grundlagenpapier'), Config.gdpr_info),
-# ori        (gettext_lazy('die DSGVO Infos'), Config.gdpr_info),
+        (gettext_lazy('das Grundlagenpapier'), Config.grundlagen),
+        (gettext_lazy('die Abo Regelungen'), Config.abo_regelungen),
+        (gettext_lazy('die DSGVO Infos'), Config.gdpr_info),
     ]
     text = {
         'accept_with_docs': gettext_lazy(

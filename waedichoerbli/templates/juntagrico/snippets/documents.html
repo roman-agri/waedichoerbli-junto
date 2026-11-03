@@ -13,19 +13,24 @@
             <ul>
                 {% if c_bylaws.strip %}
                     <li>
-                        <a href="{{ c_bylaws }}">{% trans "Statuten" %}</a>
+                        <a href="{{ c_bylaws }}">{% trans "Statuten des Wädichörblis" %}</a>
                     </li>
                 {% endif %}
                 {% if c_business_regulations.strip %}
                     <li>
-                        <a target="_blank" href="{{ c_business_regulations }}">{% trans "Betriebsreglement" %}</a>
+                        <a target="_blank" href="{{ c_business_regulations }}">{% trans "Betriebsreglement des Wädichörblis" %}</a>
                     </li>
                 {% endif %}
                  <li>
                     <a target="_blank" href="https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf">
-                        {% trans "Grundlagenpapier" %}
+                        {% trans "Grundlagenpapier des Wädichörblis" %}
                     </a>
                 </li>
+                <li>
+                    <a target="_blank" href="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf">
+                        {% trans "Abo Regelungen der Bio Solawi Oberschwandenhof GmbH" %}
+                    </a>
+                    </li>
                 {% if c_faq.strip %}
                     <li>
                         <a href="{{ c_faq }}">{% trans "Häufig gestellte Fragen" %}</a>

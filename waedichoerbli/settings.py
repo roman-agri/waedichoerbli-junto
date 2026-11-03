@@ -274,8 +274,8 @@ BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Wae
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
 #Die GrundlagenPapiere sind fix codiert im templates/juntagrico/signup/member.html & 
 #                                          templates/juntagrico/snippets/documents.html
-GDPR_INFO = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf"
-
+GRUNDLAGEN = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf"
+ABO_REGELUNGEN="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf"
 
 LOGGING = {
     'version': 1,
