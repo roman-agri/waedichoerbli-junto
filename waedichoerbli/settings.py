@@ -17,7 +17,7 @@ DEBUG = os.environ.get("JUNTAGRICO_DEBUG", 'False')=='True'
 # set staging for testing-instance to 1 & ALLOWED_HOSTS add 'waedichoerbli-staging.juntagrico.science'
 JUNTAGRICO_STAGING='0'
 
-ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science','localhost',]
+ALLOWED_HOSTS = ['junto.waedichoerbli.ch','waedichoerbli.juntagrico.science','localhost']
 
 
 # Application definition
@@ -258,8 +258,9 @@ DUEDATE_NOTICE_URL= ""
 """
     für Staging kommentar gänsefüsschen bei den codezeilen löschen
 """
+
 """
-if os.environ.get('JUNTAGRICO_STAGING') == '1':
+  if os.environ.get('JUNTAGRICO_STAGING') == '1':
     # staging css einbinden
     STYLES['static'].append('waedichoerbli/css/staging.css')
     # staging URL erlauben
@@ -272,8 +273,10 @@ if os.environ.get('JUNTAGRICO_STAGING') == '1':
 """
 BUSINESS_REGULATIONS = "https://waedichoerbli.ch/dokumente/Betriebsreglement_Waedichoerbli.pdf"
 BYLAWS = "https://waedichoerbli.ch/dokumente/Statuten_Waedichoerbli.pdf"
-#Die GrundlagenPapiere sind fix codiert im templates/juntagrico/signup/member.html
-
+#Die GrundlagenPapiere sind fix codiert im templates/juntagrico/signup/member.html & 
+#                                          templates/juntagrico/snippets/documents.html
+GRUNDLAGEN = "https://waedichoerbli.ch/dokumente/Grundlagenpapier_Waedichoerbli.pdf"
+ABO_REGELUNGEN="https://waedichoerbli.ch/dokumente/GmbH Abo Regelungen_2027.pdf"
 
 LOGGING = {
     'version': 1,
